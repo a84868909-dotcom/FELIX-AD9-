@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة الألفي الثانوية المشتركة | Al-Alfi Joint Secondary School</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0a1628;
+            --primary: #0f2440;
+            --primary-light: #1a3658;
+            --gold: #c9a84c;
+            --gold-light: #e0c878;
+            --gold-dark: #8b6914;
+            --accent: #f0e6d3;
+            --bg-cream: #faf7f2;
+            --white: #ffffff;
+            --gray-50: #f9f8f6;
+            --gray-100: #f0ede7;
+            --gray-200: #e5e0d5;
+            --gray-300: #c4b8a7;
+            --gray-400: #9e907a;
+            --gray-500: #6b5e4f;
+            --gray-600: #4a3f35;
+            --gray-700: #2d2416;
+            --red: #c94a3a;
+            --red-light: #e57373;
+            --green: #2d7a4f;
+            --green-light: #4caf84;
+            --blue: #1976d2;
+            --blue-light: #42a5f5;
+            --purple: #7c3aed;
+            --purple-light: #a78bfa;
+            --orange: #f59e0b;
+            --orange-light: #fbbf24;
+            
+            --shadow-xs: 0 1px 2px rgba(10, 22, 40, 0.04);
+            --shadow-sm: 0 2px 4px rgba(10, 22, 40, 0.06);
+            --shadow-md: 0 4px 8px rgba(10, 22, 40, 0.08);
+            --shadow-lg: 0 8px 24px rgba(10, 22, 40, 0.12);
+            --shadow-xl: 0 16px 48px rgba(10, 22, 40, 0.16);
+            --shadow-2xl: 0 24px 64px rgba(10, 22, 40, 0.2);
+            
+            --radius-xs: 0.5rem;
+            --radius-sm: 0.75rem;
+            --radius-md: 1rem;
+            --radius-lg: 1.25rem;
+            --radius-xl: 1.5rem;
+            --radius-2xl: 2rem;
+            
+            --transition-fast: 0.15s ease;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-cream);
+            color: var(--primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--gray-100); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--accent);
+            padding: 0.5rem 2rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+        .top-bar span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .top-bar i { color: var(--gold); font-size: 0.85rem; }
+        
+        .lang-switcher { display: flex; gap: 0.4rem; }
+        .lang-btn {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--accent);
+            padding: 0.35rem 0.9rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-size: 0.73rem;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        .lang-btn:hover { background: rgba(255,255,255,0.15); }
+        .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--primary-dark); }
+
+        .main-header {
+            background: var(--white);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-xs);
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition);
+        }
+        .header-brand:hover .school-crest {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(10, 22, 40, 0.25);
+        }
+        .school-crest {
+            width: 58px; height: 58px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light); font-size: 1.8rem;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gold-dark);
+            transition: var(--transition-slow);
+        }
+        .school-info h1 { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); line-height: 1.3; }
+        .school-info .subtitle { font-size: 0.85rem; color: var(--gold-dark); font-weight: 600; }
+        .school-info .english-name { font-size: 0.7rem; color: var(--gray-400); font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; }
+        
+        .header-badges { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .seal {
+            width: 50px; height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            border: 2px solid var(--primary-light);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .seal i { font-size: 1.5rem; color: var(--primary); }
+        .dev-badge {
+            background: var(--gray-50);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex; align-items: center; gap: 0.6rem;
+            border: 1px solid var(--gray-200);
+            flex-wrap: wrap;
+        }
+        .dev-badge i { color: var(--primary); }
+        .ad9-tag {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            padding: 0.25rem 0.8rem;
+            border-radius: 1.5rem;
+            display: flex; align-items: center; gap: 0.3rem;
+            box-shadow: 0 0 15px rgba(201, 168, 76, 0.25);
+        }
+        .ad9-tag i { color: var(--gold); font-size: 0.75rem; }
+        .ad9-tag span { font-weight: 800; color: var(--gold-light); font-size: 0.8rem; }
+
+        .nav-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: var(--shadow-xs);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.3rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.3rem;
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 600;
+            font-size: 0.88rem;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .nav-link i { color: var(--gold-dark); font-size: 0.9rem; transition: var(--transition); }
+        .nav-link:hover { color: var(--primary); border-bottom-color: var(--gold); background: var(--gray-50); }
+        .nav-link.active { color: var(--primary-dark); border-bottom-color: var(--primary); font-weight: 700; }
+        .nav-link.active i { color: var(--primary); }
+
+        .main-container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; flex: 1; width: 100%; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a1628 0%, #132840 30%, #0f2440 70%, #0a1628 100%);
+            border-radius: var(--radius-2xl);
+            padding: 3.5rem 2.5rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -30%; left: -30%;
+            width: 160%; height: 160%;
+            background: radial-gradient(ellipse at 40% 30%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 60% 70%, rgba(224, 200, 120, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(to right, #ffffff 20%, #e0c878 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--accent);
+            position: relative;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 2.5rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary-dark);
+        }
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to left, var(--gray-200), transparent);
+            margin-right: 1rem;
+        }
+
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.8rem; }
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold-light); }
+        .card.pinned { border: 2px solid var(--gold); }
+        .pin-badge {
+            position: absolute;
+            top: 0.8rem; right: 0.8rem;
+            background: var(--gold);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 1.5rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            z-index: 5;
+            display: flex; align-items: center; gap: 0.3rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-media {
+            background: var(--gray-100);
+            min-height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .card-media img { width: 100%; height: 220px; object-fit: cover; }
+        .card-media video { width: 100%; max-height: 240px; }
+        .card-media .placeholder-icon { font-size: 3rem; color: var(--gray-300); }
+        .card-body { padding: 1.5rem; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--primary-dark); }
+        .card-meta { font-size: 0.75rem; color: var(--gray-400); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.3rem; }
+        .card-text { font-size: 0.88rem; color: var(--gray-600); margin-bottom: 1.2rem; line-height: 1.6; }
+
+        .btn {
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.82rem;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+            text-decoration: none;
+        }
+        .btn-outline { background: var(--gray-50); border: 1px solid var(--gray-200); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: white; box-shadow: var(--shadow-sm); }
+        .btn-gold:hover { background: linear-gradient(135deg, var(--gold-dark), #6b4f10); box-shadow: var(--shadow-md); }
+        .btn-danger { background: var(--red); color: white; }
+        .btn-danger:hover { background: #a33d2f; }
+        .btn-sm { padding: 0.35rem 0.9rem; font-size: 0.7rem; border-radius: 1.5rem; }
+
+        .share-buttons {
+            display: none; gap: 0.5rem; flex-wrap: wrap;
+            margin-top: 0.8rem; padding-top: 0.8rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .share-buttons.show { display: flex; }
+        .share-btn {
+            padding: 0.4rem 1rem; border-radius: 1.5rem;
+            font-size: 0.7rem; font-weight: 600; border: none;
+            cursor: pointer; display: flex; align-items: center; gap: 0.3rem;
+            transition: var(--transition-fast);
+        }
+        .share-btn:hover { filter: brightness(1.1); }
+        .share-wa { background: #25D366; color: white; }
+        .share-fb { background: #1877F2; color: white; }
+        .share-tg { background: #26A5E4; color: white; }
+        .share-copy { background: var(--gray-100); color: var(--gray-700); border: 1px solid var(--gray-300); }
+
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .activity-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition);
+        }
+        .activity-card:hover { box-shadow: var(--shadow-md); border-color: var(--gold-light); }
+        .activity-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .gallery-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        .filter-btn:hover { border-color: var(--gold); }
+        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .search-box { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .search-box .input {
+            flex: 1;
+            padding: 0.7rem 1.2rem;
+            border-radius: 2rem;
+            border: 1px solid var(--gray-200);
+            font-family: 'Cairo', sans-serif;
+            background: var(--white);
+            font-size: 0.85rem;
+        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .gallery-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .gallery-thumb { width: 100%; height: 220px; object-fit: cover; background: var(--gray-100); }
+        .gallery-thumb.video-thumb {
+            display: flex; align-items: center; justify-content: center;
+            background: var(--primary-dark);
+        }
+        .gallery-thumb.video-thumb i { font-size: 3rem; color: white; opacity: 0.8; }
+        .gallery-info { padding: 1rem 1.2rem; }
+        .gallery-info h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--primary-dark); }
+        .gallery-info p { font-size: 0.75rem; color: var(--gray-400); }
+        .gallery-category {
+            position: absolute;
+            top: 0.8rem; right: 0.8rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 1rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: white;
+            z-index: 2;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .lightbox.show { display: flex; }
+        .lightbox img, .lightbox video {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-2xl);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+            background: rgba(255,255,255,0.1);
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: none;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+        .table-wrap {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            overflow-x: auto;
+            box-shadow: var(--shadow-sm);
+        }
+        .schedule-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        .schedule-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .schedule-table td {
+            padding: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.85rem;
+        }
+        .schedule-table tr:hover td { background: var(--gray-50); }
+
+        .form-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .input, .textarea, select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            font-family: 'Cairo', sans-serif;
+            background: var(--gray-50);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .input:focus, .textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+            background: white;
+        }
+        .textarea { resize: vertical; min-height: 120px; }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-lg);
+        }
+        .icon-circle {
+            width: 80px; height: 80px;
+            background: var(--gray-50);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--gold-dark);
+            border: 2px solid var(--gold-light);
+        }
+
+        .admin-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+        }
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+            width: 95%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: var(--radius-2xl);
+            z-index: 1000;
+            box-shadow: var(--shadow-2xl);
+            border: 2px solid var(--gold);
+        }
+        .admin-header {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1.2rem 1.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        .admin-close {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .admin-close:hover { background: var(--red); }
+        .admin-body { padding: 1.5rem; }
+        .admin-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .admin-tab {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        .admin-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .admin-pane { display: none; }
+        .admin-pane.active { display: block; }
+        .file-drop {
+            border: 2px dashed var(--gold);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            background: var(--gray-50);
+            transition: var(--transition);
+        }
+        .file-drop:hover { background: #fdf8f0; }
+        .preview-img {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: var(--radius-md);
+            display: none;
+            margin: 0.8rem auto;
+        }
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+        }
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid var(--gray-100);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .list-item:last-child { border-bottom: none; }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 2px dashed var(--gray-300);
+            color: var(--gray-400);
+        }
+        .empty-state i { font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300); }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem; right: 1rem;
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideUp 0.3s ease;
+            border: 1px solid var(--gold);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .site-footer {
+            background: var(--primary-dark);
+            color: var(--accent);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-top: auto;
+            border-top: 4px solid var(--gold);
+        }
+        .footer-tag {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.15);
+            padding: 0.3rem 1.5rem;
+            border-radius: 2rem;
+            margin-top: 0.8rem;
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .main-header { flex-direction: column; text-align: center; padding: 1rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .hero-section { padding: 2.5rem 1.5rem; }
+            .hero-section h2 { font-size: 1.8rem; }
+            .nav-link { padding: 0.8rem 0.9rem; font-size: 0.78rem; }
+            .top-bar { padding: 0.5rem 1rem; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">محافظة الشرقية · إدارة منيا القمح التعليمية</span></span>
+        <span><i class="fas fa-calendar-alt"></i> <span data-i18n="year">العام الدراسي 2025 / 2026</span></span>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLang('ar')">🇸🇦 العربية</button>
+            <button class="lang-btn" onclick="switchLang('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="switchLang('de')">🇩🇪 Deutsch</button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-brand" id="adminTrigger" title="اضغط 5 مرات لفتح لوحة الإدارة">
+            <div class="school-crest"><i class="fas fa-landmark"></i></div>
+            <div class="school-info">
+                <h1 data-i18n="schoolName">مدرسة الألفي الثانوية المشتركة</h1>
+                <div class="subtitle" data-i18n="schoolType">العسكرية المشتركة</div>
+                <div class="english-name">Al-Alfi Joint Secondary Military School</div>
+            </div>
+        </div>
+        <div class="header-badges">
+            <div class="seal"><i class="fas fa-award"></i></div>
+            <div class="dev-badge">
+                <i class="fas fa-code"></i> <span data-i18n="developer">المطور: أشرف محمد حامد فهمي عبدالعال</span>
+                <div class="ad9-tag"><i class="fas fa-gem"></i><span>AD9</span></div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a class="nav-link active" data-page="home"><i class="fas fa-home"></i> <span data-i18n="navHome">الرئيسية</span></a>
+            <a class="nav-link" data-page="news"><i class="fas fa-newspaper"></i> <span data-i18n="navNews">الأخبار</span></a>
+            <a class="nav-link" data-page="activities"><i class="fas fa-futbol"></i> <span data-i18n="navActivities">الأنشطة</span></a>
+            <a class="nav-link" data-page="gallery"><i class="fas fa-images"></i> <span data-i18n="navGallery">معرض الصور</span></a>
+            <a class="nav-link" data-page="schedule"><i class="fas fa-calendar-week"></i> <span data-i18n="navSchedule">الجدول</span></a>
+            <a class="nav-link" data-page="library"><i class="fas fa-book"></i> <span data-i18n="navLibrary">المكتبة</span></a>
+            <a class="nav-link" data-page="contact"><i class="fas fa-address-card"></i> <span data-i18n="navContact">اتصل بنا</span></a>
+            <a class="nav-link" data-page="suggestions"><i class="fas fa-lightbulb"></i> <span data-i18n="navSuggestions">اقتراحات</span></a>
+        </div>
+    </nav>
+
+    <div class="main-container"><div id="pageContent"></div></div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close"><i class="fas fa-times"></i></button>
+        <div id="lightboxContent"></div>
+    </div>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3><i class="fas fa-crown" style="color:var(--gold);"></i> <span data-i18n="adminTitle">لوحة التحكم</span></h3>
+            <button class="admin-close" onclick="closeAdmin()">✕</button>
+        </div>
+        <div class="admin-body">
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-atab="newsTab">📰 <span data-i18n="adminNews">الأخبار</span></button>
+                <button class="admin-tab" data-atab="activitiesTab">⚽ <span data-i18n="adminActivities">الأنشطة</span></button>
+                <button class="admin-tab" data-atab="galleryTab">🖼️ <span data-i18n="adminGallery">المعرض</span></button>
+                <button class="admin-tab" data-atab="scheduleTab">📅 <span data-i18n="adminSchedule">الجدول</span></button>
+                <button class="admin-tab" data-atab="booksTab">📚 <span data-i18n="adminLibrary">المكتبة</span></button>
+                <button class="admin-tab" data-atab="suggestionsTab">💡 <span data-i18n="adminSuggestions">الاقتراحات</span></button>
+            </div>
+
+            <div id="newsTab" class="admin-pane active">
+                <input type="text" id="aNewsTitle" class="input" data-i18n-placeholder="newsTitle" placeholder="عنوان الخبر">
+                <textarea id="aNewsDesc" class="textarea" data-i18n-placeholder="newsDesc" placeholder="نص الخبر..."></textarea>
+                <input type="text" id="aNewsDate" class="input" data-i18n-placeholder="newsDate" placeholder="التاريخ (اختياري)">
+                <div class="file-drop" onclick="document.getElementById('aMediaFile').click()">
+                    <i class="fas fa-cloud-upload-alt" style="font-size:2rem;color:var(--gold);"></i>
+                    <p data-i18n="uploadMedia">اختر صورة أو فيديو للخبر</p>
+                    <input type="file" id="aMediaFile" accept="image/*,video/*" style="display:none" onchange="previewAdminMedia(this)">
+                </div>
+                <img id="aMediaPreview" class="preview-img" alt="معاينة">
+                <button class="btn btn-gold" onclick="publishNews()" style="width:100%;justify-content:center;">➕ <span data-i18n="publish">نشر الخبر</span></button>
+                <div class="list-container" id="adminNewsList"></div>
+            </div>
+
+            <div id="activitiesTab" class="admin-pane">
+                <input type="text" id="aActName" class="input" data-i18n-placeholder="activityName" placeholder="اسم النشاط">
+                <textarea id="aActDesc" class="textarea" data-i18n-placeholder="activityDesc" placeholder="وصف النشاط"></textarea>
+                <button class="btn btn-gold" onclick="addActivity()" style="width:100%;justify-content:center;">➕ <span data-i18n="addActivity">إضافة نشاط</span></button>
+                <div class="list-container" id="adminActsList"></div>
+            </div>
+
+            <div id="galleryTab" class="admin-pane">
+                <input type="text" id="aGalleryTitle" class="input" data-i18n-placeholder="galleryTitle" placeholder="عنوان الصورة/الفيديو">
+                <textarea id="aGalleryDesc" class="textarea" data-i18n-placeholder="galleryDesc" placeholder="وصف مختصر"></textarea>
+                <select id="aGalleryCat" class="input">
+                    <option value="events">📅 <span data-i18n="events">فعاليات</span></option>
+                    <option value="sports">⚽ <span data-i18n="sports">رياضة</span></option>
+                    <option value="academic">📚 <span data-i18n="academic">أكاديمي</span></option>
+                    <option value="ceremonies">🎖️ <span data-i18n="ceremonies">احتفالات</span></option>
+                </select>
+                <div class="file-drop" onclick="document.getElementById('aGalleryFile').click()">
+                    <i class="fas fa-cloud-upload-alt" style="font-size:2rem;color:var(--gold);"></i>
+                    <p data-i18n="uploadGallery">اختر صورة أو فيديو للمعرض</p>
+                    <input type="file" id="aGalleryFile" accept="image/*,video/*" style="display:none" onchange="previewGalleryMedia(this)">
+                </div>
+                <img id="aGalleryPreview" class="preview-img" alt="معاينة">
+                <button class="btn btn-gold" onclick="addGalleryItem()" style="width:100%;justify-content:center;">🖼️ <span data-i18n="addToGallery">إضافة للمعرض</span></button>
+                <div class="list-container" id="adminGalleryList"></div>
+            </div>
+
+            <div id="scheduleTab" class="admin-pane">
+                <textarea id="aScheduleRaw" class="textarea" data-i18n-placeholder="scheduleFormat" placeholder="الأحد,عربي,رياضيات,علوم,فيزياء,إنجليزي,رياضة"></textarea>
+                <button class="btn btn-gold" onclick="saveSchedule()" style="width:100%;justify-content:center;">💾 <span data-i18n="saveSchedule">حفظ الجدول</span></button>
+            </div>
+
+            <div id="booksTab" class="admin-pane">
+                <input type="text" id="aBookName" class="input" data-i18n-placeholder="bookName" placeholder="اسم الكتاب">
+                <input type="text" id="aBookLink" class="input" data-i18n-placeholder="bookLink" placeholder="رابط التحميل">
+                <button class="btn btn-gold" onclick="addBook()" style="width:100%;justify-content:center;">📚 <span data-i18n="addBook">إضافة كتاب</span></button>
+                <div class="list-container" id="adminBooksList"></div>
+            </div>
+
+            <div id="suggestionsTab" class="admin-pane">
+                <div class="list-container" id="adminSuggestionsList"></div>
+                <button class="btn btn-danger" onclick="clearSuggestions()" style="width:100%;justify-content:center;margin-top:1rem;">🗑️ <span data-i18n="deleteAllSuggestions">حذف جميع الاقتراحات</span></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2026 <span data-i18n="schoolName">مدرسة الألفي الثانوية المشتركة</span> - <span data-i18n="address">محافظة الشرقية</span></p>
+        <p data-i18n="developer">تصميم وتطوير الطالب / أشرف محمد حامد فهمي عبدالعال</p>
+        <div class="footer-tag">✨ AD9 ® <span data-i18n="trademark">علامة تجارية مسجلة</span></div>
+    </footer>
+
+    <script>
+        // ==================== DATA STORE ====================
+        const STORAGE_KEY = 'alfi_school_vFinal';
+        let appData = {
+            news: [],
+            activities: [],
+            books: [],
+            schedule: [],
+            suggestions: [],
+            galleryItems: [],
+            language: 'ar'
+        };
+
+        const TELEGRAM_BOT = '7877035389:AAFeQb1NK5JuPe5CAh5KIlDg63hpv42WYEA';
+        const TELEGRAM_CHAT = '8211866200';
+
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                try { 
+                    const parsed = JSON.parse(saved);
+                    appData = { ...appData, ...parsed };
+                } catch(e) { 
+                    console.warn('Error loading data, resetting...');
+                }
+            }
+            appData.language = localStorage.getItem('alfi_lang') || 'ar';
+        }
+
+        function saveData() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+        }
+
+        // ==================== MULTI-LANGUAGE SYSTEM ====================
+        const i18n = {
+            ar: {
+                address: 'محافظة الشرقية · إدارة منيا القمح التعليمية',
+                year: 'العام الدراسي 2025 / 2026',
+                schoolName: 'مدرسة الألفي الثانوية المشتركة',
+                schoolType: 'العسكرية المشتركة',
+                developer: 'المطور: أشرف محمد حامد فهمي عبدالعال',
+                navHome: 'الرئيسية',
+                navNews: 'الأخبار',
+                navActivities: 'الأنشطة',
+                navGallery: 'معرض الصور',
+                navSchedule: 'الجدول',
+                navLibrary: 'المكتبة',
+                navContact: 'اتصل بنا',
+                navSuggestions: 'اقتراحات',
+                heroTitle: 'مدرسة الألفي الثانوية المشتركة',
+                heroDesc: 'صرح تعليمي عسكري يجمع بين الأصالة والانضباط ليصنع قادة المستقبل.',
+                welcome: 'مرحباً بك في البوابة الرسمية',
+                noNews: 'لا توجد أخبار منشورة حالياً',
+                noActivities: 'لا توجد أنشطة مضافة بعد',
+                noGallery: 'لا توجد صور أو فيديوهات مضافة بعد',
+                noSchedule: 'لم يتم إعداد الجدول الدراسي بعد',
+                noBooks: 'المكتبة الرقمية فارغة حالياً',
+                latestNews: 'آخر الأخبار',
+                studentActivities: 'الأنشطة الطلابية',
+                galleryTitle: 'معرض الصور والفيديوهات',
+                weeklySchedule: 'الجدول الأسبوعي',
+                digitalLibrary: 'المكتبة الرقمية',
+                contactTitle: 'تواصل مع المطور',
+                developerName: 'أشرف محمد حامد فهمي عبدالعال',
+                developerDesc: 'مطور المنصة | طالب بمدرسة الألفي العسكرية',
+                suggestionsTitle: 'اقتراحات الطلاب',
+                suggestPlaceholder: 'اكتب اقتراحك هنا...',
+                namePlaceholder: 'اسمك (اختياري)',
+                sendBtn: 'إرسال الاقتراح',
+                share: 'مشاركة',
+                download: 'تحميل',
+                noDate: 'بدون تاريخ',
+                pinned: 'مثبت',
+                all: 'الكل',
+                events: 'فعاليات',
+                sports: 'رياضة',
+                academic: 'أكاديمي',
+                ceremonies: 'احتفالات',
+                search: 'بحث...',
+                trademark: 'علامة تجارية مسجلة',
+                adminTitle: 'لوحة التحكم',
+                adminNews: 'الأخبار',
+                adminActivities: 'الأنشطة',
+                adminGallery: 'المعرض',
+                adminSchedule: 'الجدول',
+                adminLibrary: 'المكتبة',
+                adminSuggestions: 'الاقتراحات',
+                newsTitle: 'عنوان الخبر',
+                newsDesc: 'نص الخبر...',
+                newsDate: 'التاريخ (اختياري)',
+                uploadMedia: 'اختر صورة أو فيديو للخبر',
+                publish: 'نشر الخبر',
+                activityName: 'اسم النشاط',
+                activityDesc: 'وصف النشاط',
+                addActivity: 'إضافة نشاط',
+                galleryTitlePlaceholder: 'عنوان الصورة/الفيديو',
+                galleryDescPlaceholder: 'وصف مختصر',
+                uploadGallery: 'اختر صورة أو فيديو للمعرض',
+                addToGallery: 'إضافة للمعرض',
+                scheduleFormat: 'الأحد,عربي,رياضيات,علوم,فيزياء,إنجليزي,رياضة',
+                saveSchedule: 'حفظ الجدول',
+                bookName: 'اسم الكتاب',
+                bookLink: 'رابط التحميل',
+                addBook: 'إضافة كتاب',
+                deleteAllSuggestions: 'حذف جميع الاقتراحات',
+                pin: 'تثبيت',
+                unpin: 'إلغاء التثبيت',
+                delete: 'حذف',
+                close: 'إغلاق'
+            },
+            en: {
+                address: 'Sharqia Governorate · Minya Al-Qamh Educational Administration',
+                year: 'Academic Year 2025 / 2026',
+                schoolName: 'Al-Alfi Joint Secondary School',
+                schoolType: 'Military Joint School',
+                developer: 'Developer: Ashraf Mohamed Hamed Fahmy Abdel-Aal',
+                navHome: 'Home',
+                navNews: 'News',
+                navActivities: 'Activities',
+                navGallery: 'Gallery',
+                navSchedule: 'Schedule',
+                navLibrary: 'Library',
+                navContact: 'Contact Us',
+                navSuggestions: 'Suggestions',
+                heroTitle: 'Al-Alfi Joint Secondary School',
+                heroDesc: 'A military educational edifice combining authenticity and discipline to shape future leaders.',
+                welcome: 'Welcome to the Official Portal',
+                noNews: 'No published news yet',
+                noActivities: 'No activities added yet',
+                noGallery: 'No photos or videos added yet',
+                noSchedule: 'Schedule not configured yet',
+                noBooks: 'Digital library is currently empty',
+                latestNews: 'Latest News',
+                studentActivities: 'Student Activities',
+                galleryTitle: 'Photo & Video Gallery',
+                weeklySchedule: 'Weekly Schedule',
+                digitalLibrary: 'Digital Library',
+                contactTitle: 'Contact Developer',
+                developerName: 'Ashraf Mohamed Hamed Fahmy Abdel-Aal',
+                developerDesc: 'Platform Developer | Student at Al-Alfi Military School',
+                suggestionsTitle: 'Student Suggestions',
+                suggestPlaceholder: 'Write your suggestion here...',
+                namePlaceholder: 'Your Name (optional)',
+                sendBtn: 'Send Suggestion',
+                share: 'Share',
+                download: 'Download',
+                noDate: 'No Date',
+                pinned: 'Pinned',
+                all: 'All',
+                events: 'Events',
+                sports: 'Sports',
+                academic: 'Academic',
+                ceremonies: 'Ceremonies',
+                search: 'Search...',
+                trademark: 'Registered Trademark',
+                adminTitle: 'Control Panel',
+                adminNews: 'News',
+                adminActivities: 'Activities',
+                adminGallery: 'Gallery',
+                adminSchedule: 'Schedule',
+                adminLibrary: 'Library',
+                adminSuggestions: 'Suggestions',
+                newsTitle: 'News Title',
+                newsDesc: 'News content...',
+                newsDate: 'Date (optional)',
+                uploadMedia: 'Choose image or video',
+                publish: 'Publish News',
+                activityName: 'Activity Name',
+                activityDesc: 'Activity Description',
+                addActivity: 'Add Activity',
+                galleryTitlePlaceholder: 'Photo/Video Title',
+                galleryDescPlaceholder: 'Short Description',
+                uploadGallery: 'Choose image or video for gallery',
+                addToGallery: 'Add to Gallery',
+                scheduleFormat: 'Sunday,Arabic,Math,Science,Physics,English,Sports',
+                saveSchedule: 'Save Schedule',
+                bookName: 'Book Name',
+                bookLink: 'Download Link',
+                addBook: 'Add Book',
+                deleteAllSuggestions: 'Delete All Suggestions',
+                pin: 'Pin',
+                unpin: 'Unpin',
+                delete: 'Delete',
+                close: 'Close'
+            },
+            de: {
+                address: 'Gouvernement Sharqia · Bildungsverwaltung Minya Al-Qamh',
+                year: 'Schuljahr 2025 / 2026',
+                schoolName: 'Al-Alfi Gemeinschaftsschule',
+                schoolType: 'Militärische Gemeinschaftsschule',
+                developer: 'Entwickler: Ashraf Mohamed Hamed Fahmy Abdel-Aal',
+                navHome: 'Startseite',
+                navNews: 'Nachrichten',
+                navActivities: 'Aktivitäten',
+                navGallery: 'Galerie',
+                navSchedule: 'Stundenplan',
+                navLibrary: 'Bibliothek',
+                navContact: 'Kontakt',
+                navSuggestions: 'Vorschläge',
+                heroTitle: 'Al-Alfi Gemeinschaftsschule',
+                heroDesc: 'Eine militärische Bildungseinrichtung, die Authentizität und Disziplin vereint.',
+                welcome: 'Willkommen im offiziellen Portal',
+                noNews: 'Keine Nachrichten veröffentlicht',
+                noActivities: 'Keine Aktivitäten hinzugefügt',
+                noGallery: 'Keine Fotos oder Videos hinzugefügt',
+                noSchedule: 'Stundenplan noch nicht konfiguriert',
+                noBooks: 'Digitale Bibliothek ist derzeit leer',
+                latestNews: 'Neueste Nachrichten',
+                studentActivities: 'Schüleraktivitäten',
+                galleryTitle: 'Foto- & Videogalerie',
+                weeklySchedule: 'Wochenstundenplan',
+                digitalLibrary: 'Digitale Bibliothek',
+                contactTitle: 'Entwickler kontaktieren',
+                developerName: 'Ashraf Mohamed Hamed Fahmy Abdel-Aal',
+                developerDesc: 'Plattformentwickler | Schüler der Al-Alfi Militärschule',
+                suggestionsTitle: 'Schülervorschläge',
+                suggestPlaceholder: 'Schreiben Sie Ihren Vorschlag...',
+                namePlaceholder: 'Ihr Name (optional)',
+                sendBtn: 'Vorschlag senden',
+                share: 'Teilen',
+                download: 'Herunterladen',
+                noDate: 'Kein Datum',
+                pinned: 'Angeheftet',
+                all: 'Alle',
+                events: 'Veranstaltungen',
+                sports: 'Sport',
+                academic: 'Akademisch',
+                ceremonies: 'Zeremonien',
+                search: 'Suchen...',
+                trademark: 'Eingetragene Marke',
+                adminTitle: 'Bedienfeld',
+                adminNews: 'Nachrichten',
+                adminActivities: 'Aktivitäten',
+                adminGallery: 'Galerie',
+                adminSchedule: 'Stundenplan',
+                adminLibrary: 'Bibliothek',
+                adminSuggestions: 'Vorschläge',
+                newsTitle: 'Nachrichtentitel',
+                newsDesc: 'Nachrichteninhalt...',
+                newsDate: 'Datum (optional)',
+                uploadMedia: 'Bild oder Video auswählen',
+                publish: 'Nachricht veröffentlichen',
+                activityName: 'Aktivitätsname',
+                activityDesc: 'Aktivitätsbeschreibung',
+                addActivity: 'Aktivität hinzufügen',
+                galleryTitlePlaceholder: 'Foto-/Videotitel',
+                galleryDescPlaceholder: 'Kurze Beschreibung',
+                uploadGallery: 'Bild oder Video auswählen',
+                addToGallery: 'Zur Galerie hinzufügen',
+                scheduleFormat: 'Sonntag,Arabisch,Mathe,Wissenschaft,Physik,Englisch,Sport',
+                saveSchedule: 'Stundenplan speichern',
+                bookName: 'Buchname',
+                bookLink: 'Download-Link',
+                addBook: 'Buch hinzufügen',
+                deleteAllSuggestions: 'Alle Vorschläge löschen',
+                pin: 'Anheften',
+                unpin: 'Lösen',
+                delete: 'Löschen',
+                close: 'Schließen'
+            }
+        };
+
+        function switchLang(lang) {
+            appData.language = lang;
+            localStorage.setItem('alfi_lang', lang);
+            
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+            
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.placeholder = i18n[lang][key];
+                }
+            });
+            
+            // Update options text
+            const catSelect = document.getElementById('aGalleryCat');
+            if (catSelect) {
+                const options = catSelect.querySelectorAll('option');
+                const categories = ['events', 'sports', 'academic', 'ceremonies'];
+                options.forEach((opt, i) => {
+                    if (i < categories.length) {
+                        const emoji = ['📅', '⚽', '📚', '🎖️'][i];
+                        opt.textContent = `${emoji} ${i18n[lang][categories[i]]}`;
+                    }
+                });
+            }
+            
+            navigateTo(currentPage);
+        }
+
+        function __(key) {
+            return (i18n[appData.language] && i18n[appData.language][key]) || i18n['ar'][key] || key;
+        }
+
+        // ==================== NAVIGATION ====================
+        let currentPage = 'home';
+        let galleryFilter = 'all';
+        let gallerySearch = '';
+
+        function navigateTo(page) {
+            currentPage = page;
+            const t = i18n[appData.language];
+            if (!t) { switchLang('ar'); return; }
+            let html = '';
+
+            switch(page) {
+                case 'home':
+                    html = `
+                        <div class="hero-section">
+                            <h2>${t.heroTitle}</h2>
+                            <p>${t.heroDesc}</p>
+                        </div>
+                        <div class="section-header">${t.welcome}</div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:1rem;">
+                            <div class="card" style="padding:2rem;text-align:center;cursor:pointer;" onclick="navigateTo('news')">
+                                <i class="fas fa-newspaper" style="font-size:3rem;color:var(--blue);margin-bottom:1rem;"></i>
+                                <h3>${t.navNews}</h3>
+                                <p style="color:var(--gray-500);font-size:0.85rem;">${appData.news.length} ${t.latestNews}</p>
+                            </div>
+                            <div class="card" style="padding:2rem;text-align:center;cursor:pointer;" onclick="navigateTo('gallery')">
+                                <i class="fas fa-images" style="font-size:3rem;color:var(--purple);margin-bottom:1rem;"></i>
+                                <h3>${t.navGallery}</h3>
+                                <p style="color:var(--gray-500);font-size:0.85rem;">${appData.galleryItems.length} ${t.all}</p>
+                            </div>
+                            <div class="card" style="padding:2rem;text-align:center;cursor:pointer;" onclick="navigateTo('suggestions')">
+                                <i class="fas fa-lightbulb" style="font-size:3rem;color:var(--orange);margin-bottom:1rem;"></i>
+                                <h3>${t.navSuggestions}</h3>
+                                <p style="color:var(--gray-500);font-size:0.85rem;">${appData.suggestions.length} ${t.navSuggestions}</p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                case 'news':
+                    const sortedNews = [...appData.news].sort((a,b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+                    if (!sortedNews.length) {
+                        html = `<div class="empty-state"><i class="far fa-newspaper"></i><p>${t.noNews}</p></div>`;
+                    } else {
+                        html = `<div class="section-header">${t.latestNews}</div><div class="cards-grid">`;
+                        sortedNews.forEach(item => {
+                            const pinnedHtml = item.pinned ? `<div class="pin-badge"><i class="fas fa-thumbtack"></i> ${t.pinned}</div>` : '';
+                            let mediaHtml = '';
+                            if (item.mediaData) {
+                                if (item.mediaType === 'video') {
+                                    mediaHtml = `<div class="card-media"><video controls src="${item.mediaData}" style="width:100%;max-height:240px;"></video></div>`;
+                                } else {
+                                    mediaHtml = `<div class="card-media"><img src="${item.mediaData}" alt="${escapeHtml(item.title)}" loading="lazy"></div>`;
+                                }
+                            } else {
+                                mediaHtml = `<div class="card-media"><i class="fas fa-newspaper placeholder-icon"></i></div>`;
+                            }
+                            html += `
+                                <div class="card ${item.pinned ? 'pinned' : ''}">
+                                    ${pinnedHtml}
+                                    ${mediaHtml}
+                                    <div class="card-body">
+                                        <div class="card-title">${escapeHtml(item.title)}</div>
+                                        <div class="card-meta"><i class="far fa-calendar-alt"></i> ${escapeHtml(item.date || t.noDate)}</div>
+                                        <div class="card-text">${escapeHtml(item.desc)}</div>
+                                        <button class="btn btn-outline" onclick="toggleShare(this)"><i class="fas fa-share-alt"></i> ${t.share}</button>
+                                        <div class="share-buttons">
+                                            <button class="share-btn share-wa" onclick="shareWA('${escapeHtml(item.title)}')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                                            <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook-f"></i> Facebook</button>
+                                            <button class="share-btn share-tg" onclick="shareTG('${escapeHtml(item.title)}')"><i class="fab fa-telegram"></i> Telegram</button>
+                                            <button class="share-btn share-copy" onclick="shareCopy()"><i class="fas fa-copy"></i> ${t.share}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        html += '</div>';
+                    }
+                    break;
+
+                case 'activities':
+                    if (!appData.activities.length) {
+                        html = `<div class="empty-state"><i class="fas fa-futbol"></i><p>${t.noActivities}</p></div>`;
+                    } else {
+                        html = `<div class="section-header">${t.studentActivities}</div><div class="activities-grid">`;
+                        appData.activities.forEach(a => {
+                            html += `<div class="activity-card">
+                                <div class="activity-icon">⚽</div>
+                                <h3>${escapeHtml(a.title)}</h3>
+                                <p style="color:var(--gray-500);">${escapeHtml(a.desc)}</p>
+                            </div>`;
+                        });
+                        html += '</div>';
+                    }
+                    break;
+
+                case 'gallery':
+                    const cats = [
+                        { id: 'all', name: t.all, color: 'var(--primary)' },
+                        { id: 'events', name: t.events, color: '#3b82f6' },
+                        { id: 'sports', name: t.sports, color: '#10b981' },
+                        { id: 'academic', name: t.academic, color: '#8b5cf6' },
+                        { id: 'ceremonies', name: t.ceremonies, color: '#f59e0b' }
+                    ];
+                    let filtered = appData.galleryItems;
+                    if (galleryFilter !== 'all') {
+                        filtered = filtered.filter(i => i.category === galleryFilter);
+                    }
+                    if (gallerySearch) {
+                        const searchLower = gallerySearch.toLowerCase();
+                        filtered = filtered.filter(i => 
+                            i.title.toLowerCase().includes(searchLower) || 
+                            (i.desc && i.desc.toLowerCase().includes(searchLower))
+                        );
+                    }
+
+                    html = `<div class="section-header">${t.galleryTitle}</div>
+                        <div class="gallery-filters">${cats.map(c => 
+                            `<button class="filter-btn ${galleryFilter === c.id ? 'active' : ''}" onclick="setGalleryFilter('${c.id}')">${c.name}</button>`
+                        ).join('')}</div>
+                        <div class="search-box">
+                            <input type="text" class="input" placeholder="${t.search}" value="${escapeHtml(gallerySearch)}" oninput="setGallerySearch(this.value)">
+                        </div>`;
+
+                    if (!filtered.length) {
+                        html += `<div class="empty-state"><i class="fas fa-images"></i><p>${t.noGallery}</p></div>`;
+                    } else {
+                        html += `<div class="gallery-grid">`;
+                        filtered.forEach(item => {
+                            const cat = cats.find(c => c.id === item.category) || cats[0];
+                            html += `<div class="gallery-item" onclick="openLightbox('${item.type}', '${item.data.replace(/'/g, "\\'")}')">
+                                <span class="gallery-category" style="background:${cat.color};">${cat.name}</span>
+                                ${item.type === 'video' ? 
+                                    `<div class="gallery-thumb video-thumb"><i class="fas fa-play-circle"></i></div>` : 
+                                    `<img src="${item.data}" class="gallery-thumb" alt="${escapeHtml(item.title)}" loading="lazy">`
+                                }
+                                <div class="gallery-info">
+                                    <h4>${escapeHtml(item.title)}</h4>
+                                    <p>${escapeHtml(item.desc || '')} · ${item.date}</p>
+                                </div>
+                            </div>`;
+                        });
+                        html += '</div>';
+                    }
+                    break;
+
+                case 'schedule':
+                    if (!appData.schedule.length) {
+                        html = `<div class="empty-state"><i class="fas fa-calendar-week"></i><p>${t.noSchedule}</p></div>`;
+                    } else {
+                        html = `<div class="section-header">${t.weeklySchedule}</div>
+                            <div class="table-wrap">
+                                <table class="schedule-table">
+                                    <thead><tr><th>${t.noDate || 'اليوم'}</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+                                    <tbody>${appData.schedule.map(row => 
+                                        `<tr>${row.map(cell => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`
+                                    ).join('')}</tbody>
+                                </table>
+                            </div>`;
+                    }
+                    break;
+
+                case 'library':
+                    if (!appData.books.length) {
+                        html = `<div class="empty-state"><i class="fas fa-book"></i><p>${t.noBooks}</p></div>`;
+                    } else {
+                        html = `<div class="section-header">${t.digitalLibrary}</div>`;
+                        appData.books.forEach(b => {
+                            html += `<div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.8rem;margin-bottom:0.8rem;">
+                                <span><i class="fas fa-file-pdf" style="color:#c94a3a;margin-left:0.5rem;"></i> ${escapeHtml(b.title)}</span>
+                                <button class="btn btn-outline btn-sm" onclick="window.open('${b.link || '#'}')"><i class="fas fa-download"></i> ${t.download}</button>
+                            </div>`;
+                        });
+                    }
+                    break;
+
+                case 'contact':
+                    html = `
+                        <div class="section-header">${t.contactTitle}</div>
+                        <div class="contact-card">
+                            <div class="icon-circle"><i class="fas fa-user-graduate"></i></div>
+                            <h2>${t.developerName}</h2>
+                            <p style="color:var(--gray-500);margin-bottom:1.5rem;">${t.developerDesc}</p>
+                            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                                <a href="https://wa.me/201101809312" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp</a>
+                                <a href="https://t.me/feli_xx9" target="_blank" class="btn btn-outline"><i class="fab fa-telegram" style="color:#26A5E4;"></i> Telegram</a>
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                case 'suggestions':
+                    html = `
+                        <div class="section-header">${t.suggestionsTitle}</div>
+                        <div class="form-card">
+                            <input type="text" id="sugName" class="input" placeholder="${t.namePlaceholder}">
+                            <textarea id="sugText" class="textarea" placeholder="${t.suggestPlaceholder}"></textarea>
+                            <button class="btn btn-gold" onclick="submitSuggestion()" style="width:100%;justify-content:center;">
+                                <i class="fab fa-telegram"></i> ${t.sendBtn}
+                            </button>
+                            <p style="font-size:0.7rem;text-align:center;margin-top:0.8rem;color:var(--gray-400);">
+                                🤖 ${appData.language === 'de' ? 'Ihr Vorschlag wird direkt an die Verwaltung gesendet' : 'سيتم إرسال اقتراحك مباشرة للإدارة عبر تيليجرام'}
+                            </p>
+                        </div>
+                    `;
+                    break;
+            }
+
+            document.getElementById('pageContent').innerHTML = html;
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === page) link.classList.add('active');
+            });
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== FUNCTIONS ====================
+        function escapeHtml(str) {
+            if (!str) return '';
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function showToast(msg) {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fas fa-check-circle" style="color:var(--green-light);"></i> ${msg}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        async function submitSuggestion() {
+            const name = document.getElementById('sugName')?.value.trim() || 'طالب';
+            const text = document.getElementById('sugText')?.value.trim();
+            if (!text) return showToast('⚠️ ' + (appData.language === 'de' ? 'Bitte schreiben Sie Ihren Vorschlag' : 'الرجاء كتابة الاقتراح أولاً'));
+
+            appData.suggestions.unshift({ name, text, date: new Date().toLocaleString('ar-EG') });
+            saveData();
+
+            const msg = `📝 *New Suggestion from Al-Alfi School*\n\n👤 *Student:* ${name}\n💡 *Suggestion:*\n${text}\n\n🕐 ${new Date().toLocaleString('ar-EG')}\n🌐 Language: ${appData.language}`;
+            try { 
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT}/sendMessage?chat_id=${TELEGRAM_CHAT}&text=${encodeURIComponent(msg)}&parse_mode=Markdown`); 
+            } catch(e) {}
+
+            document.getElementById('sugName').value = '';
+            document.getElementById('sugText').value = '';
+            showToast('✅ ' + (appData.language === 'de' ? 'Vorschlag erfolgreich gesendet!' : 'تم إرسال اقتراحك بنجاح!'));
+        }
+
+        function toggleShare(btn) {
+            const row = btn.parentElement.querySelector('.share-buttons');
+            if (row) row.classList.toggle('show');
+        }
+
+        function shareWA(title) {
+            window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + window.location.href)}`, '_blank');
+        }
+
+        function shareFB() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function shareTG(title) {
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(title)}`, '_blank');
+        }
+
+        function shareCopy() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                showToast('✅ ' + (appData.language === 'de' ? 'Link kopiert!' : 'تم نسخ رابط الموقع'));
+            });
+        }
+
+        function setGalleryFilter(f) { galleryFilter = f; navigateTo('gallery'); }
+        function setGallerySearch(s) { gallerySearch = s; navigateTo('gallery'); }
+
+        function openLightbox(type, data) {
+            const content = document.getElementById('lightboxContent');
+            content.innerHTML = type === 'video' ? 
+                `<video controls autoplay src="${data}" style="max-width:90%;max-height:85vh;"></video>` : 
+                `<img src="${data}" alt="صورة">`;
+            document.getElementById('lightbox').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // ==================== ADMIN PANEL ====================
+        let adminMediaData = null, adminMediaType = null;
+        let galleryMediaData = null, galleryMediaType = null;
+
+        function openAdmin() {
+            document.getElementById('adminPanel').style.display = 'block';
+            document.getElementById('adminOverlay').style.display = 'block';
+            refreshAdminLists();
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('adminOverlay').style.display = 'none';
+            adminMediaData = null;
+            adminMediaType = null;
+            galleryMediaData = null;
+            galleryMediaType = null;
+            const mp = document.getElementById('aMediaPreview');
+            const gp = document.getElementById('aGalleryPreview');
+            if (mp) mp.style.display = 'none';
+            if (gp) gp.style.display = 'none';
+        }
+
+        document.getElementById('adminOverlay').addEventListener('click', closeAdmin);
+
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.admin-pane').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                const target = document.getElementById(tab.dataset.atab);
+                if (target) target.classList.add('active');
+            });
+        });
+
+        function previewAdminMedia(input) {
+            const file = input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                adminMediaData = e.target.result;
+                adminMediaType = file.type.startsWith('video') ? 'video' : 'image';
+                const preview = document.getElementById('aMediaPreview');
+                if (preview) {
+                    if (adminMediaType === 'image') {
+                        preview.src = adminMediaData;
+                        preview.style.display = 'block';
+                    } else {
+                        preview.style.display = 'none';
+                    }
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function previewGalleryMedia(input) {
+            const file = input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                galleryMediaData = e.target.result;
+                galleryMediaType = file.type.startsWith('video') ? 'video' : 'image';
+                const preview = document.getElementById('aGalleryPreview');
+                if (preview) {
+                    if (galleryMediaType === 'image') {
+                        preview.src = galleryMediaData;
+                        preview.style.display = 'block';
+                    } else {
+                        preview.style.display = 'none';
+                    }
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function publishNews() {
+            const titleEl = document.getElementById('aNewsTitle');
+            const descEl = document.getElementById('aNewsDesc');
+            const dateEl = document.getElementById('aNewsDate');
+            
+            const title = titleEl?.value.trim() || '';
+            const desc = descEl?.value.trim() || '';
+            const date = dateEl?.value.trim() || '';
+            
+            if (!title || !desc) return showToast('⚠️ ' + __('newsTitle') + ' + ' + __('newsDesc'));
+            
+            appData.news.unshift({
+                id: Date.now(),
+                title,
+                desc,
+                date: date || new Date().toLocaleDateString('ar-EG'),
+                mediaData: adminMediaData || '',
+                mediaType: adminMediaType || '',
+                pinned: false
+            });
+            saveData();
+            
+            if (titleEl) titleEl.value = '';
+            if (descEl) descEl.value = '';
+            if (dateEl) dateEl.value = '';
+            document.getElementById('aMediaFile').value = '';
+            const preview = document.getElementById('aMediaPreview');
+            if (preview) preview.style.display = 'none';
+            adminMediaData = null;
+            adminMediaType = null;
+            
+            refreshAdminLists();
+            navigateTo('news');
+            showToast('✅ ' + __('publish'));
+        }
+
+        function addActivity() {
+            const nameEl = document.getElementById('aActName');
+            const descEl = document.getElementById('aActDesc');
+            const title = nameEl?.value.trim() || '';
+            
+            if (!title) return showToast('⚠️ ' + __('activityName'));
+            
+            appData.activities.push({ title, desc: descEl?.value.trim() || '' });
+            saveData();
+            
+            if (nameEl) nameEl.value = '';
+            if (descEl) descEl.value = '';
+            
+            refreshAdminLists();
+            navigateTo('activities');
+            showToast('✅ ' + __('addActivity'));
+        }
+
+        function addGalleryItem() {
+            const titleEl = document.getElementById('aGalleryTitle');
+            const descEl = document.getElementById('aGalleryDesc');
+            const catEl = document.getElementById('aGalleryCat');
+            
+            const title = titleEl?.value.trim() || '';
+            
+            if (!title || !galleryMediaData) return showToast('⚠️ ' + __('galleryTitlePlaceholder'));
+            
+            appData.galleryItems.unshift({
+                id: Date.now(),
+                title,
+                desc: descEl?.value.trim() || '',
+                category: catEl?.value || 'events',
+                type: galleryMediaType,
+                data: galleryMediaData,
+                date: new Date().toLocaleDateString('ar-EG')
+            });
+            saveData();
+            
+            if (titleEl) titleEl.value = '';
+            if (descEl) descEl.value = '';
+            document.getElementById('aGalleryFile').value = '';
+            const preview = document.getElementById('aGalleryPreview');
+            if (preview) preview.style.display = 'none';
+            galleryMediaData = null;
+            galleryMediaType = null;
+            
+            refreshAdminLists();
+            navigateTo('gallery');
+            showToast('✅ ' + __('addToGallery'));
+        }
+
+        function addBook() {
+            const nameEl = document.getElementById('aBookName');
+            const linkEl = document.getElementById('aBookLink');
+            const title = nameEl?.value.trim() || '';
+            
+            if (!title) return showToast('⚠️ ' + __('bookName'));
+            
+            appData.books.push({ title, link: linkEl?.value.trim() || '' });
+            saveData();
+            
+            if (nameEl) nameEl.value = '';
+            if (linkEl) linkEl.value = '';
+            
+            refreshAdminLists();
+            showToast('✅ ' + __('addBook'));
+        }
+
+        function saveSchedule() {
+            const rawEl = document.getElementById('aScheduleRaw');
+            const raw = rawEl?.value || '';
+            appData.schedule = raw.split('\n').filter(l => l.trim()).map(l => l.split(',').map(c => c.trim()));
+            saveData();
+            navigateTo('schedule');
+            showToast('✅ ' + __('saveSchedule'));
+        }
+
+        function clearSuggestions() {
+            if (confirm(__('deleteAllSuggestions') + '؟')) {
+                appData.suggestions = [];
+                saveData();
+                refreshAdminLists();
+                showToast('✅ ' + __('deleteAllSuggestions'));
+            }
+        }
+
+        function refreshAdminLists() {
+            // News
+            const nl = document.getElementById('adminNewsList');
+            if (nl) {
+                if (appData.news.length) {
+                    nl.innerHTML = appData.news.map((n, i) => `
+                        <div class="list-item">
+                            <span>📰 ${escapeHtml(n.title.substring(0, 40))}</span>
+                            <div style="display:flex;gap:0.3rem;">
+                                ${n.pinned ? 
+                                    `<button class="btn btn-sm" style="background:#95a5a6;color:white;" onclick="appData.news[${i}].pinned=false;saveData();refreshAdminLists();">${__('unpin')}</button>` : 
+                                    `<button class="btn btn-sm btn-gold" onclick="appData.news[${i}].pinned=true;saveData();refreshAdminLists();">📌 ${__('pin')}</button>`
+                                }
+                                <button class="btn btn-sm btn-danger" onclick="appData.news.splice(${i},1);saveData();refreshAdminLists();navigateTo('news');">🗑️</button>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    nl.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--gray-400);">' + __('noNews') + '</div>';
+                }
+            }
+
+            // Activities
+            const al = document.getElementById('adminActsList');
+            if (al) {
+                if (appData.activities.length) {
+                    al.innerHTML = appData.activities.map((a, i) => `
+                        <div class="list-item">
+                            <span>⚽ ${escapeHtml(a.title)}</span>
+                            <button class="btn btn-sm btn-danger" onclick="appData.activities.splice(${i},1);saveData();refreshAdminLists();">🗑️</button>
+                        </div>
+                    `).join('');
+                } else {
+                    al.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--gray-400);">' + __('noActivities') + '</div>';
+                }
+            }
+
+            // Gallery
+            const gl = document.getElementById('adminGalleryList');
+            if (gl) {
+                if (appData.galleryItems.length) {
+                    gl.innerHTML = appData.galleryItems.map((g, i) => `
+                        <div class="list-item">
+                            <span>🖼️ ${escapeHtml(g.title)}</span>
+                            <button class="btn btn-sm btn-danger" onclick="appData.galleryItems.splice(${i},1);saveData();refreshAdminLists();">🗑️</button>
+                        </div>
+                    `).join('');
+                } else {
+                    gl.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--gray-400);">' + __('noGallery') + '</div>';
+                }
+            }
+
+            // Books
+            const bl = document.getElementById('adminBooksList');
+            if (bl) {
+                if (appData.books.length) {
+                    bl.innerHTML = appData.books.map((b, i) => `
+                        <div class="list-item">
+                            <span>📚 ${escapeHtml(b.title)}</span>
+                            <button class="btn btn-sm btn-danger" onclick="appData.books.splice(${i},1);saveData();refreshAdminLists();">🗑️</button>
+                        </div>
+                    `).join('');
+                } else {
+                    bl.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--gray-400);">' + __('noBooks') + '</div>';
+                }
+            }
+
+            // Suggestions
+            const sl = document.getElementById('adminSuggestionsList');
+            if (sl) {
+                if (appData.suggestions.length) {
+                    sl.innerHTML = appData.suggestions.map((s, i) => `
+                        <div class="list-item">
+                            <span>💡 ${escapeHtml((s.text || s.suggestion || '').substring(0, 50))}</span>
+                            <button class="btn btn-sm btn-danger" onclick="appData.suggestions.splice(${i},1);saveData();refreshAdminLists();">🗑️</button>
+                        </div>
+                    `).join('');
+                } else {
+                    sl.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--gray-400);">' + __('deleteAllSuggestions') + '</div>';
+                }
+            }
+        }
+
+        // ==================== INITIALIZATION ====================
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateTo(link.dataset.page);
+            });
+        });
+
+        // Secret admin access (5 clicks)
+        let clickCount = 0, clickTimer;
+        const adminTrigger = document.getElementById('adminTrigger');
+        if (adminTrigger) {
+            adminTrigger.addEventListener('click', () => {
+                clickCount++;
+                clearTimeout(clickTimer);
+                clickTimer = setTimeout(() => { clickCount = 0; }, 900);
+                if (clickCount >= 5) {
+                    clickCount = 0;
+                    openAdmin();
+                }
+            });
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                e.preventDefault();
+                openAdmin();
+            }
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeAdmin();
+            }
+        });
+
+        // Load and start
+        loadData();
+        switchLang(appData.language);
+        navigateTo('home');
+
+        // Global exposure
+        window.toggleShare = toggleShare;
+        window.shareWA = shareWA;
+        window.shareFB = shareFB;
+        window.shareTG = shareTG;
+        window.shareCopy = shareCopy;
+        window.setGalleryFilter = setGalleryFilter;
+        window.setGallerySearch = setGallerySearch;
+        window.openLightbox = openLightbox;
+        window.closeLightbox = closeLightbox;
+        window.publishNews = publishNews;
+        window.addActivity = addActivity;
+        window.addGalleryItem = addGalleryItem;
+        window.addBook = addBook;
+        window.saveSchedule = saveSchedule;
+        window.clearSuggestions = clearSuggestions;
+        window.closeAdmin = closeAdmin;
+        window.submitSuggestion = submitSuggestion;
+        window.previewAdminMedia = previewAdminMedia;
+        window.previewGalleryMedia = previewGalleryMedia;
+        window.switchLang = switchLang;
+
+        console.log('🏫 مدرسة الألفي الثانوية المشتركة | Al-Alfi Joint Secondary School');
+        console.log('✨ AD9 ® - Developed by Ashraf Mohamed');
+        console.log('🌐 Languages: العربية | English | Deutsch');
+        console.log('💾 localStorage | 🤖 Telegram Bot | 🖼️ Gallery');
+        console.log('🔑 Admin: 5 clicks on logo | Ctrl+Shift+A');
+        console.log('✅ All systems operational - 100% functional');
+    </script>
+</body>
+</html>
